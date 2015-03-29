@@ -1,0 +1,9 @@
+- if @site.rendered?
+  = render 'rendered'
+- else
+  = render 'not_rendered'
+
+br
+.row
+  .col-sm-12
+    =< link_to 'Get back to index page', site_maps_path, class: 'btn btn-default'

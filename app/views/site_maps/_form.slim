@@ -1,0 +1,6 @@
+= simple_form_for(@site, html: { class: 'form-horizontal' }) do |f|
+  .form-group.col-sm-9
+    = f.label :url, 'Enter Url', class: 'sr-only'
+    = f.input_field :url, class: 'form-control', placeholder: 'Enter URL'
+  .col-sm-3
+    = f.submit 'Build sitemap', class: 'btn btn-primary'

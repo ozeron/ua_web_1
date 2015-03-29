@@ -1,0 +1,15 @@
+.row
+  .col-sm-12
+    h1 Congrats!! Finally! Rendered!
+.row
+  .col-sm-6
+    #_giphy_tv
+    javascript:
+      var _giphy_tv_tag="congratulations";
+      var g = document.createElement('script'); g.type = 'text/javascript'; g.async = true;
+      g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'giphy.com/static/js/widgets/tv.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(g, s);
+br
+.row
+  .col-sm-12
+    = link_to "Download", site_map_path(@site, format: :xml), class: "btn btn-primary"

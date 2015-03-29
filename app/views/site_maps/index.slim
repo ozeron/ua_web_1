@@ -1,0 +1,12 @@
+.row
+  .col-sm-12
+    h1 What's up?
+    = render 'form'
+.row
+  .col-sm-12
+    - @sites.each do |s|
+      .panel.panel-default
+        .panel-body
+          = link_to s.url, site_map_path(s)
+          .pull-right
+            =  button_to "Destroy", s,  { method: :delete, class: 'btn btn-default' }
