@@ -8,8 +8,9 @@ class SiteMapBuilderWorker
     map.rendered = true
     map.save
     puts "Map Built!"
-  rescue
+  rescue => e
     map.failed = true
     map.save
+    fail e
   end
 end

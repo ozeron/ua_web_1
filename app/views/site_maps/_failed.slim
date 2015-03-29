@@ -1,6 +1,6 @@
 .row
   .col-sm-12
-    h1 Wait a little bit, we a hardly working to build your xml
+    h1 Sorry we are unable to render file try again later
 .row
   .col-sm-6
     .panel.panel-info
@@ -9,12 +9,11 @@
       .panel-body
         #_giphy_tv
       .panel-footer
-        |Building site-map for
+        |Can't site-map for
         =< link_to @site.url
+
 javascript:
-  var _giphy_tv_tag="working";
+  var _giphy_tv_tag="sad";
   var g = document.createElement('script'); g.type = 'text/javascript'; g.async = true;
   g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'giphy.com/static/js/widgets/tv.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(g, s);
-.row
-  .col-sm-12

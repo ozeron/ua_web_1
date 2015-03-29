@@ -9,7 +9,7 @@ class SiteMapsController < ApplicationController
     respond_to do |format|
       format.html
       format.xml { render xml: @site.xml }
-      format.json { render json: @site }
+      format.json { render json: @site.rendered }
     end
   end
 
@@ -25,8 +25,7 @@ class SiteMapsController < ApplicationController
       redirect_to(site_map_path(@site))
     else
       flash.now[:error] = 'Enter valid url with scheme'
-      @sites = SiteMap.all
-      render(:index)
+      redirect_to(site_maps_path)
     end
   end
 
@@ -34,11 +33,10 @@ class SiteMapsController < ApplicationController
     map = SiteMap.find(params[:id])
     if map.destroy
       flash[:notice] = 'Destroyed site_map'
-      redirect_to site_maps_path
     else
       flash[:notice] = 'Problem destroying site_map'
-      redirect_to site_maps_path
     end
+    redirect_to site_maps_path
   end
 
   private

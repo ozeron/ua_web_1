@@ -1,4 +1,6 @@
-- if @site.rendered?
+- if @site.failed?
+  = render 'failed'
+- elsif @site.rendered?
   = render 'rendered'
 - else
   = render 'not_rendered'

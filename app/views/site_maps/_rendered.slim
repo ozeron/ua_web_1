@@ -3,12 +3,20 @@
     h1 Congrats!! Finally! Rendered!
 .row
   .col-sm-6
-    #_giphy_tv
-    javascript:
-      var _giphy_tv_tag="congratulations";
-      var g = document.createElement('script'); g.type = 'text/javascript'; g.async = true;
-      g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'giphy.com/static/js/widgets/tv.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(g, s);
+    .panel.panel-success
+      .panel-heading
+        h3.panel-title You can still watch TV
+      .panel-body
+        #_giphy_tv
+      .panel-footer
+        |Finished site-map for
+        =< link_to @site.url
+javascript:
+  var _giphy_tv_tag="congratulations";
+  var g = document.createElement('script'); g.type = 'text/javascript'; g.async = true;
+  g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'giphy.com/static/js/widgets/tv.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(g, s);
+
 br
 .row
   .col-sm-12

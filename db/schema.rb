@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20150329074339) do
   create_table "site_maps", force: :cascade do |t|
     t.string   "url"
     t.text     "xml"
-    t.boolean  "rendered"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "rendered",   default: false
+    t.boolean  "failed",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
