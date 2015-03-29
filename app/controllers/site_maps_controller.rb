@@ -9,7 +9,7 @@ class SiteMapsController < ApplicationController
     respond_to do |format|
       format.html
       format.xml { render xml: @site.xml }
-      format.json { render json: @site.rendered }
+      format.json { render json: @site }
     end
   end
 

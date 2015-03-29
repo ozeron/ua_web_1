@@ -13,4 +13,6 @@
             .pull-right.action
               => link_to "Download", site_map_path(s, format: :xml), class: 'btn btn-primary'
           .pull-right.action
-            => button_to "Destroy", site_map_path(s),  { method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?'}
+            => button_to "Destroy", site_map_path(s),  { method: :delete,
+                                                         class: "btn btn-#{s.failed? ? 'danger' : 'info'}",
+                                                         confirm: 'Are you sure?'}

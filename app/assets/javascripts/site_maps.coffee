@@ -5,7 +5,7 @@
 runReload = ->
   setInterval (->
     makeRequest (data)->
-      if data.rendered == true
+      if data.rendered == true || data.failed == true
         location.reload()
   ), 1000
 
@@ -20,5 +20,5 @@ makeRequest = (f)->
 
 $('.site_maps-show').ready ->
   makeRequest (data)->
-    if data.rendered != true
+    if data.rendered != true && data.failed == false
       runReload()

@@ -1,3 +1,4 @@
+
 - if @site.failed?
   = render 'failed'
 - elsif @site.rendered?
@@ -9,3 +10,7 @@ br
 .row
   .col-sm-12
     =< link_to 'Get back to index page', site_maps_path, class: 'btn btn-default'
+    .pull-right
+      => button_to "Destroy", site_map_path(@site), {method: :delete,
+                                                     class: "btn btn-#{@site.failed? ? 'danger' : 'info'}",
+                                                     confirm: 'Are you sure?'}
